@@ -15,7 +15,9 @@ ul[role="list"] {
 }
 
 :root {
-  --cell-padding: 4rem;
+  --cell-padding-desktop: 4rem;
+  --cell-padding-mobile: 2rem;
+  --btn-padding: 1rem;
 }
 
 body {
@@ -37,6 +39,10 @@ body {
   grid-gap: 0.75rem 0.75rem;
 }
 
+.padding {
+  padding: var(--cell-padding-desktop);
+}
+
 header {
   background: rgb(89, 16, 89);
   grid-area: header;
@@ -50,10 +56,10 @@ nav {
 }
 nav > button.menu-link {
   background-color: rgb(181, 82, 181);
-  padding: var(--cell-padding);
   border: none;
   color: white;
   font-size: 3rem;
+  padding: var(--btn-padding);
 }
 
 main {
@@ -70,4 +76,26 @@ footer {
   background: rgb(134, 216, 134);
   grid-area: footer;
   padding: var(--cell-padding);
+}
+
+/* Mobile version */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "aside"
+      "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .padding {
+    padding: var(--cell-padding-mobile);
+  }
+
+  nav {
+    row-gap: 0.3rem;
+  }
 }
