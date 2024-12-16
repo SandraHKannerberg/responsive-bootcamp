@@ -9,3 +9,83 @@
   margin: 0;
   padding: 0;
 }
+
+ul[role="list"] {
+  list-style: none;
+}
+
+body {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Desktop-first */
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "nav main aside"
+    "footer footer footer";
+  grid-template-columns: 25% 50% 25%;
+  gap: 0.5rem;
+  width: min(90%, 75rem);
+  background-color: #fff;
+  border: 0.5rem solid #fff;
+  margin: auto;
+}
+
+header {
+  background-color: rgb(72, 19, 122);
+  grid-area: header;
+  padding: 2rem;
+}
+
+nav {
+  grid-area: nav;
+
+  ul {
+    display: grid;
+    gap: 0.5rem;
+    height: 100%;
+
+    li {
+      background-color: rgb(160, 67, 160);
+      justify-content: stretch;
+
+      a.menu-link {
+        text-decoration: none;
+        color: #000;
+
+        &:visited {
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+    }
+  }
+}
+
+main {
+  grid-area: main;
+  gap: 1rem;
+
+  h1 {
+    margin-left: 1rem;
+  }
+
+  p {
+    line-height: 1.5;
+    margin: 1rem;
+  }
+}
+
+aside {
+  background-color: pink;
+  grid-area: aside;
+}
+
+footer {
+  background-color: rgb(147, 228, 147);
+  grid-area: footer;
+  padding: 2rem;
+}
