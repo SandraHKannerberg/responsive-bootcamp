@@ -1,0 +1,148 @@
+/*CSS RESET*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul[role="list"] {
+  list-style: none;
+}
+
+:root {
+  --cell-padding-desktop: 4rem;
+  --cell-padding-mobile: 2rem;
+  --btn-padding: 2rem;
+  --gap-base: 0.75rem;
+  --gap-large: 1rem;
+  --gap-small: 0.3rem;
+}
+
+body {
+  color: white;
+}
+
+.grid-container {
+  height: 100vh;
+  margin: auto;
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "main main"
+    "button button"
+    "footer footer";
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 4fr 1fr 1fr;
+  grid-gap: var(--gap-base) var(--gap-base);
+  border: var(--gap-base) solid #fff;
+}
+
+.padding {
+  padding: var(--cell-padding-desktop);
+}
+
+header {
+  grid-area: header;
+  display: grid;
+  margin-block: var(--gap-large);
+
+  section.logotype {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    background-color: rgb(93, 6, 93);
+  }
+}
+
+main {
+  grid-area: main;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-large);
+
+  section {
+    flex: 1 1 calc(50% - var(--gap-base));
+  }
+
+  section.color-dark {
+    background-color: rgb(181, 82, 181);
+  }
+
+  section.color-light {
+    background-color: pink;
+  }
+
+  section:nth-child(3) {
+    order: 4;
+  }
+
+  section:nth-child(4) {
+    order: 3;
+  }
+}
+
+button.cta-btn {
+  grid-area: button;
+  display: grid;
+  background-color: hotpink;
+  border: none;
+  padding: var(--btn-padding);
+  width: 20rem;
+  border-radius: 6rem;
+  justify-self: center;
+  margin-block: var(--gap-large);
+}
+
+footer {
+  background: rgb(134, 216, 134);
+  grid-area: footer;
+  border-bottom: var(--gap-base) solid #fff;
+}
+
+/* Mobile version */
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-areas:
+      "header"
+      "main"
+      "button"
+      "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  header {
+    justify-content: center;
+    margin-block: 1rem;
+  }
+
+  main {
+    flex-direction: column-reverse;
+    gap: var(--gap-base);
+
+    section {
+      flex: 1;
+    }
+
+    section.color-dark {
+      background-color: rgb(181, 82, 181);
+    }
+
+    section.color-light {
+      background-color: pink;
+    }
+
+    section:nth-child(3) {
+      order: 3;
+    }
+
+    section:nth-child(4) {
+      order: 4;
+    }
+  }
+}
