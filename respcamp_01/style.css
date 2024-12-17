@@ -48,7 +48,6 @@ body {
 header {
   background: rgb(89, 16, 89);
   grid-area: header;
-  padding: var(--cell-padding);
 }
 nav {
   grid-area: nav;
@@ -65,18 +64,14 @@ nav > button.menu-link {
 
 main {
   grid-area: main;
-  color: #000;
-  padding: var(--cell-padding);
 }
 aside {
   background: pink;
   grid-area: aside;
-  padding: var(--cell-padding);
 }
 footer {
   background: rgb(134, 216, 134);
   grid-area: footer;
-  padding: var(--cell-padding);
   border-bottom: var(--gap-base) solid #fff;
 }
 
