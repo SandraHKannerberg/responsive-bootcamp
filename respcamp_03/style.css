@@ -17,9 +17,9 @@ ul[role="list"] {
 :root {
   --cell-padding-desktop: 4rem;
   --cell-padding-mobile: 2rem;
-  --btn-padding: 2rem;
-  --gap-base: 0.75rem;
-  --gap-large: 1rem;
+  --btn-padding: 1rem;
+  --gap-base: 1.2rem;
+  --gap-large: 3rem;
   --gap-small: 0.3rem;
 }
 
@@ -49,10 +49,12 @@ body {
 header {
   grid-area: header;
   display: grid;
+  align-items: center;
+  justify-content: start;
 
   section.logotype {
-    height: 5rem;
-    width: 5rem;
+    height: clamp(5rem, 6vw, 10rem);
+    width: clamp(5rem, 6vw, 10rem);
     border-radius: 50%;
     background-color: rgb(93, 6, 93);
   }
@@ -67,7 +69,7 @@ nav {
   button.menu-link {
     background-color: rgb(181, 82, 181);
     border: none;
-    border-radius: 6rem;
+    border-radius: 10rem;
     padding: var(--btn-padding);
   }
 }
@@ -78,8 +80,8 @@ main {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-gap: var(--gap-base);
-  margin-left: 2rem;
-  margin-block: 2rem;
+  margin-left: var(--gap-base);
+  margin-block: var(--gap-base);
 
   section {
     background-color: pink;
@@ -91,8 +93,8 @@ aside {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   grid-gap: var(--gap-base);
-  margin-right: 2rem;
-  margin-block: 2rem;
+  margin-right: var(--gap-base);
+  margin-block: var(--gap-base);
 
   button {
     background-color: hotpink;
@@ -118,11 +120,13 @@ footer {
       "footer";
     grid-template-columns: 1fr;
     grid-template-rows: auto;
+    grid-gap: var(--gap-base) var(--gap-base);
   }
 
   header {
     justify-content: center;
     margin-block: 1rem;
+    padding: 0;
   }
 
   nav {

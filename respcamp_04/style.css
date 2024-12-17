@@ -50,10 +50,12 @@ header {
   grid-area: header;
   display: grid;
   margin-block: var(--gap-large);
+  justify-content: start;
+  align-items: center;
 
   section.logotype {
-    height: 5rem;
-    width: 5rem;
+    height: clamp(5rem, 6vw, 10rem);
+    width: clamp(5rem, 6vw, 10rem);
     border-radius: 50%;
     background-color: rgb(93, 6, 93);
   }
@@ -92,9 +94,11 @@ button.cta-btn {
   background-color: hotpink;
   border: none;
   padding: var(--btn-padding);
-  width: 20rem;
+  width: 30%;
+  height: 50%;
   border-radius: 6rem;
   justify-self: center;
+  align-self: center;
   margin-block: var(--gap-large);
 }
 

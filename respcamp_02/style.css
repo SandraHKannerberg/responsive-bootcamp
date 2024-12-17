@@ -18,8 +18,8 @@ ul[role="list"] {
   --cell-padding-desktop: 4rem;
   --cell-padding-mobile: 2rem;
   --btn-padding: 2rem;
-  --gap-base: 0.75rem;
-  --gap-large: 1rem;
+  --gap-base: 1rem;
+  --gap-large: 3rem;
   --gap-small: 0.3rem;
 }
 
@@ -37,8 +37,8 @@ body {
     "footer footer footer footer";
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr 4fr 1fr;
-  grid-gap: var(--gap-base) var(--gap-base);
-  border: var(--gap-base) solid #fff;
+  grid-gap: var(--gap-large) var(--gap-large);
+  border: var(--gap-large) solid #fff;
 }
 
 .padding {
@@ -52,7 +52,7 @@ header {
 nav {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: var(--gap-base);
+  grid-gap: var(--gap-large);
   height: 100%;
 }
 
@@ -66,7 +66,7 @@ main {
   grid-area: main;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: var(--gap-base);
+  grid-gap: var(--gap-large);
 }
 
 section {
@@ -76,7 +76,6 @@ section {
 footer {
   background: rgb(134, 216, 134);
   grid-area: footer;
-  border-bottom: var(--gap-base) solid #fff;
 }
 
 /* Mobile version */
@@ -88,6 +87,8 @@ footer {
       "footer";
     grid-template-columns: 1fr;
     grid-template-rows: auto;
+    grid-gap: var(--gap-base) var(--gap-base);
+    border: var(--gap-base) solid #fff;
   }
 
   nav {
@@ -97,5 +98,6 @@ footer {
 
   main {
     grid-template-columns: 1fr;
+    grid-gap: var(--gap-base);
   }
 }
