@@ -18,8 +18,7 @@ ul[role="list"] {
   --cell-padding-desktop: 4rem;
   --cell-padding-mobile: 2rem;
   --btn-padding: 1rem;
-  --gap-base: 1.2rem;
-  --gap-large: 3rem;
+  --gap-base: 1em;
   --gap-small: 0.3rem;
 }
 
@@ -37,9 +36,9 @@ body {
     "main main aside"
     "footer footer footer";
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr 1fr 4fr 1fr;
+  grid-template-rows: auto-flow min-content;
   grid-gap: var(--gap-base) var(--gap-base);
-  border: var(--gap-base) solid #fff;
+  margin: var(--gap-base);
 }
 
 .padding {
@@ -78,7 +77,7 @@ main {
   grid-area: main;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: auto-flow min-content;
   grid-gap: var(--gap-base);
   margin-left: var(--gap-base);
   margin-block: var(--gap-base);
@@ -91,7 +90,7 @@ main {
 aside {
   grid-area: aside;
   display: grid;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: auto-flow min-content;
   grid-gap: var(--gap-base);
   margin-right: var(--gap-base);
   margin-block: var(--gap-base);
@@ -119,7 +118,6 @@ footer {
       "aside"
       "footer";
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
     grid-gap: var(--gap-base) var(--gap-base);
   }
 
@@ -137,14 +135,12 @@ footer {
 
   main {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
     margin-left: 0;
     margin-block: 0;
   }
 
   aside {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
     margin-right: 0;
     margin-block: 0;
   }
